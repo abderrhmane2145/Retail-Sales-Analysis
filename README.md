@@ -43,29 +43,39 @@ This project performs Exploratory Data Analysis (EDA) on a retail transaction da
   - Extra focus on Age 18–25.
 - Maintain a **balanced strategy**, prioritizing upselling for higher impact.
 
-Retail-Sales-Analysis                      
-├── Cleaning/                  
-│   ├── Cleaning.py            
-│   └── Cleaning_Notebook.ipynb 
-└── docs/                     
-    ├── define_problem.md      
-    ├── data_catalog.md    
-    └── actionable_insights.md  
-├── EDA/ 
-|   ├── SQL_files/
-|       ├── create_table.sql
-|       ├── load_data.sql
-|       ├── EDA(group by, segmentation).sql
-│   ├── EDA.ipynb          
-│   ├── EDA_Customer_Queries.sql  
-│   ├── EDA_Revenue_Queries.sql       
-├── visualization/            
-│   └── Retail Sales Dashboard.xlsx  
-├── data/                      
-│   └── retail_sales_dataset.csv    
-├── README.md                  
-├── LICENSE 
-     
+## Project Structure
+```
+Retail-Sales-Analysis/
+│
+├── Cleaning/
+│   ├── Cleaning.py
+│   └── Cleaning_Notebook.ipynb
+│
+├── EDA/
+│   ├── EDA.ipynb
+│   ├── SQL_files/
+│   │   ├── create_table.sql
+│   │   ├── load_data.sql
+│   │   └── EDA(group by, segmentation).sql
+│   ├── EDA_Customer_Queries.sql
+│   └── EDA_Revenue_Queries.sql
+│
+├── visualization/
+│   └── Retail Sales Dashboard.xlsx
+│
+├── data/
+│   └── retail_sales_dataset.csv
+│
+├── docs/
+│   ├── define_problem.md
+│   ├── data_catalog.md
+│   └── actionable_insights.md
+│
+├── README.md
+└── LICENSE
+```
+
+
 
 ## Conclusion
 By prioritizing upselling on high-value items (especially Electronics for younger customers) and protecting big spenders, while using cross-selling strategically on Clothing during slower periods, the business can achieve higher and more stable revenue growth.
