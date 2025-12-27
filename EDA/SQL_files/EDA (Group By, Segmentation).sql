@@ -16,14 +16,14 @@ I - Revenue
 
 SELECT 
 	YEAR(date) as year,
-	CONCAT(SUM(revenue), ' $') AS total_revenue 
+	SUM(revenue)AS total_revenue 
 FROM dbo.retail_sales 
 GROUP BY YEAR(date);
 -- 2) Revenue By Year, Months
 SELECT 
     YEAR(date)  AS year,
 	MONTH(date) AS month,
-	CONCAT(SUM(revenue), ' $') AS total_revenue
+	SUM(revenue) AS total_revenue
 FROM dbo.retail_sales
 GROUP BY YEAR(date), MONTH(date)
 ORDER BY YEAR(date), MONTH(date);
@@ -47,7 +47,7 @@ ORDER BY year, month;
 -- 3) Total Revenue for each category
 SELECT 
     product_category,
-	CONCAT(SUM(revenue), ' $') AS total_revenue
+	SUM(revenue) AS total_revenue
 FROM dbo.retail_sales
 GROUP BY product_category
 ORDER BY SUM(revenue) DESC;
@@ -55,7 +55,7 @@ ORDER BY SUM(revenue) DESC;
 -- 4) Total Revenue By Gender
 SELECT 
     gender,
-	CONCAT(SUM(revenue), ' $') AS total_revenue
+	SUM(revenue) AS total_revenue
 FROM dbo.retail_sales
 GROUP BY gender
 ORDER BY SUM(revenue) DESC;
@@ -74,7 +74,7 @@ FROM dbo.retail_sales
 )
 SELECT 
 	age_group,
-	CONCAT(SUM(revenue), ' $') AS total_revenue
+	SUM(revenue) AS total_revenue
 FROM CTE_Segment 
 GROUP BY age_group;
 
@@ -140,8 +140,7 @@ GROUP BY age_group
 SELECT 
    age_group,
    total_revenue,
-   total_customer,
-   (total_revenue / total_customer) AS new_col
+   total_customer
 FROM CTE_Secondary;
 WITH CTE_first AS
 (
@@ -161,4 +160,5 @@ SELECT
    COUNT(product_category) AS Total
 FROM CTE_first
 GROUP BY age_group, product_category
+
 ORDER BY age_group, product_category;
